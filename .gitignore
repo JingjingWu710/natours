@@ -1,0 +1,14 @@
+config.env
+.env
+.env.*
+
+node_modules/
+
+.vscode/
+
+*.log
+.DS_Store
+
+public/tour.html
+
+dev-data/templates
