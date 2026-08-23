@@ -42,6 +42,10 @@ const connectSrcUrls = [
   'https://unpkg.com',
   'https://tile.openstreetmap.org',
   'https://cdnjs.cloudflare.com',
+  'ws://127.0.0.1:*',
+  'ws://localhost:*',
+  'http://127.0.0.1:*',
+  'http://localhost:*',
 ];
 const fontSrcUrls = ['fonts.googleapis.com', 'fonts.gstatic.com'];
 
@@ -75,6 +79,7 @@ app.use('/api', limiter);
 
 // Body parser, reading data from body into req.body
 app.use(express.json({ limit: '10kb' }));
+app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 // app.use((req, res, next) => {
 //   console.log('Received body:', req.body);
 //   next();
