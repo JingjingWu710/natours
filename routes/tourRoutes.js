@@ -20,7 +20,7 @@ router
   .get(
     authController.protect,
     authController.restrictTo('admin', 'lead-guide', 'guide'),
-    tourController.getMonthlyPlan
+    tourController.getMonthlyPlan,
   );
 
 router
@@ -36,7 +36,7 @@ router
   .post(
     authController.protect,
     authController.restrictTo('admin', 'lead-guide'),
-    tourController.createTour
+    tourController.createTour,
   );
 
 router
@@ -45,12 +45,14 @@ router
   .patch(
     authController.protect,
     authController.restrictTo('admin', 'lead-guide'),
-    tourController.updateTour
+    tourController.uploadTourImages,
+    tourController.resizeTourImages,
+    tourController.updateTour,
   )
   .delete(
     authController.protect,
     authController.restrictTo('admin', 'lead-guide'),
-    tourController.deleteTour
+    tourController.deleteTour,
   );
 
 // POST /tour/sahrifh/reviews
